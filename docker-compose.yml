@@ -1,0 +1,11 @@
+nginx:
+    build: nginx
+    env_file:
+        - nginx/envs
+    ports:
+        - "80:80"
+    log_driver: "json-file"
+    log_opt:
+        max-size: "50m"
+        max-file: "7"
+    restart: always
