@@ -2,10 +2,11 @@
 
 echo "Re-download /tmp/lets ..."
 rm -rf /tmp/lets
-git clone https://github.com/lukas2511/letsencrypt.sh /tmp/lets 
+curl -XGET -L https://github.com/lukas2511/letsencrypt.sh/archive/master.zip -o /tmp/lets.zip
+unzip /tmp/lets.zip -d /tmp
 
 echo "Copy to /letsencrypt.sh"
-cp /tmp/lets/letsencrypt.sh /letsencrypt.sh/
+cp /tmp/letsencrypt.sh-master/letsencrypt.sh /letsencrypt.sh/
 
 echo "Start cronjob"
 crontab /letsencrypt.sh/service-cron && cron

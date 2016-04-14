@@ -2,7 +2,7 @@ from nginx:latest
 
 maintainer ymy1019@gmail.com
 
-run apt-get update && apt-get install -y curl git cron
+run apt-get update && apt-get install -y curl cron unzip
 
 copy nginx.conf /etc/nginx/
 copy default.conf /etc/nginx/conf.d/default.conf
